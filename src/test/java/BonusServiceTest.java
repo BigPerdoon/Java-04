@@ -1,6 +1,5 @@
-public class BonuceService {
 
-    public class BonusService {
+    public class BonusServiceTest {
         public long calculate(long amount, boolean registered) {
             int percent = registered ? 3 : 1;
             long bonus = amount * percent / 100;
@@ -11,4 +10,4 @@ public class BonuceService {
             return bonus;
         }
     }
-}
+
