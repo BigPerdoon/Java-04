@@ -7,7 +7,7 @@ public class BonusServiceTest {
 
     @Test
     void shouldCalculateForRegisteredAndUnderLimit() {
-        BonusServiceTest service = new BonusServiceTest();
+        BonusService service = new BonusService();
 
         // данные
         long amount = 1000;
@@ -24,7 +24,7 @@ public class BonusServiceTest {
 
     @Test
     void shouldCalculateForRegisteredAndOverLimit() {
-        BonusServiceTest service = new BonusServiceTest();
+        BonusService service = new BonusService();
 
         // данные
         long amount = 1_000_000;
@@ -33,8 +33,8 @@ public class BonusServiceTest {
 
         //вызываем метод
 
-        long actual;
-        actual = service.clone(amount, registered);
+//        long actual;
+        long actual = service.clone(amount, registered);
 
         //проводим сравнение
         Assertions.assertEquals(expected, actual);
@@ -45,7 +45,7 @@ public class BonusServiceTest {
     @Test
         //  рассчитать для зарегистрированных пользователей и суммы при которой бонусы не начисляются.
     void shouldCalculateForRegisteredAndAmountAtWhichBonusesAreNotCredited() {
-        BonusServiceTest service = new BonusServiceTest();
+        BonusService service = new BonusService();
 
         long amount = 33;
         boolean registered = true;
@@ -57,13 +57,10 @@ public class BonusServiceTest {
 
     }
 
-    private int calculate(long amount, boolean registered) {
-    }
-
     @Test
         // рассчитать для зарегистрированных пользователей и суммы за которую начислят 1 бонус
     void shouldCalculateForRegisteredAndAmountForWhichOneBonusWillBeCredited() {
-        BonusServiceTest service = new BonusServiceTest();
+        BonusService service = new BonusService();
 
         long amount = 34;
         boolean registered = true;
@@ -78,7 +75,7 @@ public class BonusServiceTest {
     @Test
         // рассчитать для зарегистрированных пользователей и суммы за которую начислят 499 бонусов
     void shouldCalculateForRegisteredAndAmountForWhichFourHundredAndNinetyNineBonusesWillBeCredited() {
-        BonusServiceTest service = new BonusServiceTest();
+        BonusService service = new BonusService();
 
         long amount = 16666;
         boolean registered = true;
@@ -94,7 +91,7 @@ public class BonusServiceTest {
         // рассчитать для зарегистрированных пользователей и минимальной суммы за которую начислят 500 бонусов
     void shouldCalculateForRegisteredAndMinimumAmountForWhichFiveHundredBonusesWillBeCredited() {
 
-        BonusServiceTest service = new BonusServiceTest();
+        BonusService service = new BonusService();
 
         long amount = 16667;
         boolean registered = true;
@@ -110,7 +107,7 @@ public class BonusServiceTest {
     @Test
         // рассчитать для не зарегистрированных пользователей и суммы при которой бонусы не начисляются.
     void shouldCalculateForNotRegisteredAndAmountAtWhichBonusesAreNotCredited() {
-        BonusServiceTest service = new BonusServiceTest();
+        BonusService service = new BonusService();
 
         long amount = 99;
         boolean registered = false;
@@ -125,7 +122,7 @@ public class BonusServiceTest {
     @Test
         // рассчитать для не зарегистрированных пользователей и суммы за которую начислят 1 бонус
     void shouldCalculateForNotRegisteredAndAmountForWhichOneBonusWillBeCredited() {
-        BonusServiceTest service = new BonusServiceTest();
+        BonusService service = new BonusService();
 
         long amount = 100;
         boolean registered = false;
@@ -140,7 +137,7 @@ public class BonusServiceTest {
     @Test
         // рассчитать для не зарегистрированных пользователей и суммы за которую начислят 499 бонусов
     void shouldCalculateForNotRegisteredAndAmountForWhichFourHundredAndNinetyNineBonusesWillBeCredited() {
-        BonusServiceTest service = new BonusServiceTest();
+        BonusService service = new BonusService();
 
         long amount = 49999;
         boolean registered = false;
@@ -155,7 +152,7 @@ public class BonusServiceTest {
     @Test
         // рассчитать для не зарегистрированных пользователей и минимальной суммы за которую начислят 500 бонусов
     void shouldCalculateForNotRegisteredAndMinimumAmountForWhichFiveHundredBonusesWillBeCredited() {
-        BonusServiceTest service = new BonusServiceTest();
+        BonusService service = new BonusService();
 
         long amount = 50000;
         boolean registered = false;
