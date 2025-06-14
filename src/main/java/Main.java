@@ -8,7 +8,7 @@ public class Main {
         long expected = 30;
 
         // вызываем целевой метод:
-        long actual =ice.calculate(amount, registered);
+        long actual =service.calculate(amount, registered);
 
         // производим проверку (сравниваем ожидаемый и фактический):
         // если true - то PASS
